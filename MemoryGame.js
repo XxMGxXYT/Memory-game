@@ -18,7 +18,7 @@ document.querySelector(".Game-Buttons span").onclick = function(){
 
 let duration = 1000;
 // Get every single card
-let cardsContainer = document.querySelector(".Game-Container");
+let cardsContainer = document.querySelector(".Game .container");
 
 let gameCards = Array.from(cardsContainer.children);
 

@@ -38,68 +38,84 @@ body{
 }
 
 .Game-Info{
-    width: 83%;
+    width: 90%;
     margin: 20px auto 0;
-    padding: 20px;
     background-color: white;
     overflow: hidden;
     border: 3px solid rgb(21, 117, 207);
+    padding: 20px;
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
 .Game-Info .name{
-    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
+    gap: 5px;
 }
 
 .Game-Info .tries{
-    float: right;
-    width: 50%;
-    text-align: right;
-}
-
-.Game-Container{
     display: flex;
-    width: 83%;
-    margin: 20px auto;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 5px;
 }
 
-.Game-Container .cards{
+.Game{
+    width: 100%;
+    margin-top: 5%;
+}
+
+.Game .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Game .container .cards{
     height: 200px;
+    width: 200px;
     transition: transform 0.5s;
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
-    flex: 1 0 200px;
-    margin: 0 10px 20px;
 }
 
-.Game-Container .cards .front{
+.Game .cards .front{
     line-height: 200px;
     background-color: #333;
 }
 
-.Game-Container .cards .front::before{
+.Game .cards .front::before{
     content: "?";
     color: aliceblue;
     font-size: 140px;
     font-weight: bold;
 }
 
-.Game-Container .cards .back{
+.Game .cards .back{
     background-color: #377ab5;
     transform: rotateY(180deg);
 }
 
-.Game-Container .cards .back img{
-    width: 166px;
-    height: 140px;
-    margin-top: 30px;
+.Game .cards .back img {
+    width: 90%;
+    height: 90%;
     border-radius: 10px;
 }
 
-.Game-Container .cards .face{
+.Game .cards .face{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     text-align: center;
     width: 100%;
@@ -108,16 +124,69 @@ body{
     border: 3px solid rgb(9, 78, 224);
 }
 
-.Game-Container .cards.flip,
-.Game-Container .cards.matched{
+.Game .cards.flip,
+.Game .cards.matched{
     -webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     transform: rotateY(180deg);
     pointer-events: none;
 }
 
-.Game-Container.stop-clicking{
+.Game.stop-clicking{
     pointer-events: none;
 }
 
 /* Memory Game */
+
+/* extra Small devices */
+@media (max-width: 499px){
+    .Game-Info{
+        font-size: 13px;
+        padding: 10px;
+    }
+    .Game .container {
+        gap: 10px;
+    }
+    .Game .container .cards{
+        height: 80px;
+        width: 76px;
+    }
+    .Game .cards .front::before {
+        font-size: 50px;
+    }
+}
+
+/* Small devices */
+@media (min-width: 500px) and (max-width: 767px){
+    .Game-Info{
+        font-size: 20px;
+    }
+    .Game .container .cards{
+        height: 120px;
+        width: 114px;
+    }
+    .Game .cards .front::before {
+        font-size: 100px;
+    }
+}
+
+/* Medium devices */
+@media (min-width: 768px) and (max-width: 992px){
+    .Game .container .cards{
+        height: 170px;
+        width: 155px;
+    }
+    .Game .cards .front::before {
+        font-size: 100px;
+    }
+}
+
+/* Large devices */
+@media (min-width: 993px) and (max-width: 1999px){ 
+    
+}
+
+/* X-Large devices */
+@media (min-width: 1200px) {
+    
+}
